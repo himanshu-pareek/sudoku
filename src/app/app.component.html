@@ -1,0 +1,32 @@
+<div class="app">
+  <h1>Sudoku Solver</h1>
+  <br /><br />
+  <table class="sudoku">
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let col of cols">
+        <!-- ({{row}}, {{col}}) -->
+        <input
+          type="text"
+          maxlength="1"
+          pattern="[1-9]+"
+          value="{{valueToDisplay(sudoku[row][col])}}"
+          (change)="handleInputChange($event, row, col)" />
+      </td>
+    </tr>
+  </table>
+  <br /><br />
+  <div class="buttons">
+    <button class="button button-success" (click)="solveSudoku()">Solve</button>
+    <button class="button button-destructive" (click)="clearSudoku()">Clear</button>
+  </div>
+  <h3 *ngIf="solving">Solving...</h3>
+  <h3 *ngIf="error">{{error}}</h3>
+  <table *ngIf="solvedSudoku" class="sudoku sudoku_solved">
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let col of cols">
+        <!-- ({{row}}, {{col}}) -->
+        {{solvedSudoku[row][col]}}
+      </td>
+    </tr>
+  </table>
+</div>

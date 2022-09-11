@@ -1,0 +1,55 @@
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td > input {
+  outline: none;
+  border: none;
+  width: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.buttons > button {
+  color: white;
+  /* background-color: blue; */
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+}
+
+.button-success {
+  background-color: green;
+}
+
+.button-destructive {
+  background-color: red;
+}
+
+.sudoku_solved {
+  margin-top: 20px;
+}
+
+.sudoku_solved td {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
