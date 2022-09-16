@@ -63,13 +63,13 @@ export class AppComponent implements OnInit{
     console.log(this.sudoku);
     this.solving = true;
     this.solvedSudoku = null;
+    this.error = "";
     try {
       this.http.post<{sudoku: number[][], solved: boolean}>(
         "/api/v1/sudoku/solve", {
         sudoku: this.sudoku
       }).subscribe(response => {
         this.solving = false;
-        this.solvedSudoku = response.sudoku;
         if (!response.solved) {
           this.error = "Sudoku can not be solved";
         } else {
